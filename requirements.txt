@@ -1,2 +1,1 @@
-package-two @ git+https://github.com/AustinTX360/820916yG!@releases/tag/v3.12.0
-
+-e git+ssh://git@github.com/Organization/repo-name.git@branch/AustinTX360
