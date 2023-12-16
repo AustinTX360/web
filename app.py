@@ -1,15 +1,10 @@
-# app.py
-from flask import Flask, render_template
-
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return render_template('index.html', title='Home', content='Welcome to my Flask app!')
-
-@app.route('/about')
-def about():
-    return render_template('index.html', title='About', content='This is a simple Flask app.')
+from os import environ
+from FlaskTemplate import app
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    HOST = environ.get('SERVER_HOST', 'localhost')
+    try:
+        PORT = int(environ.get('SERVER_PORT', '8080'))
+    except ValueError:
+        PORT = 8080
+    app.run(HOST, PORT)
